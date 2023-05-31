@@ -1,0 +1,7 @@
+{
+  "name": "morseapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
