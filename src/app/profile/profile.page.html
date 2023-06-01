@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar class="header-toolbar">
+    <ion-title>
+      Perfil del Usuario
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="user-card">
+    <ion-card-header>
+      <ion-card-title>Datos del Usuario</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div *ngIf="encryptedData">
+        <h3>Datos cifrados:</h3>
+        <p>{{ encryptedData }}</p>
+        <ion-button (click)="decryptData()" expand="full">Descifrar datos</ion-button>
+      </div>
+
+      <div *ngIf="decryptedData">
+        <h3>Datos descifrados:</h3>
+        <p>Nombres: {{ decryptedData.nombre }}</p>
+        <p>Apellidos: {{ decryptedData.apellido }}</p>
+        <p>Cédula: {{ decryptedData.cedula }}</p>
+        <p>Correo: {{ decryptedData.email }}</p>
+      </div>
+    </ion-card-content>
+    <ion-button color="primary" (click)="logout()" expand="full">Cerrar sesión</ion-button>
+  </ion-card>
+</ion-content>

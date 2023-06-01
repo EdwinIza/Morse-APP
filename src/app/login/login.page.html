@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Morse APP Autentication
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="login-icon">
+    <img src="../assets/login.svg" alt="">
+  </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" class="custom-button" (click)="login()">Iniciar sesión</ion-button>
+
+  <div class="register-link">
+    ¿No tienes una cuenta? <a routerLink="/register">Regístrate</a>
+  </div>
+</ion-content>

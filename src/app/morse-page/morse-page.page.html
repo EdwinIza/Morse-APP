@@ -1,0 +1,676 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ingreso de Código Morse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item class="custom-input">
+    <ion-label position="floating">Código Morse</ion-label>
+    <ion-input [(ngModel)]="morseMessage"></ion-input>
+  </ion-item>
+  
+
+  <ion-button
+    expand="full"
+    (click)="authenticateWithMorse()"
+  >Autentificar con Código Morse</ion-button>
+
+  <ion-content>
+    <div class="toggle-button">
+      <ion-button (click)="toggleTable()">Mostrar tabla de código Morse</ion-button>
+    </div>
+
+    <table *ngIf="showTable">
+      <!-- Contenido de la tabla aquí -->
+
+      <thead>
+        <tr>
+          <th>Letra</th>
+
+          <th>Código Morse</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>A</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.- ')"
+            >.-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>B</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-... ')"
+            >-...</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>C</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-.-. ')"
+            >-.-.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>D</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-.. ')"
+            >-..</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>E</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('. ')"
+            >.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>F</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('..-. ')"
+            >..-.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>G</td>
+
+          <td>
+            <button 
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('--. ')"
+            >--.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>H</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.... ')"
+            >....</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>I</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.. ')"
+            >..</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>J</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.--- ')"
+            >.---</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>K</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-.- ')"
+            >-.-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>L</td>
+
+          <td>
+            <button 
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.-.. ')"
+            >.-..</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>M</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-- ')"
+            >--</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>N</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-. ')"
+            >-.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>O</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('--- ')"
+            >---</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>P</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.--. ')"
+            >.--.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Q</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('--.- ')"
+            >--.-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>R</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.-. ')"
+            >.-.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>S</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('... ')"
+            >...</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>T</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('- ')"
+            >-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>U</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('..- ')"
+            >..-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>V</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('...- ')"
+            >...-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>W</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.-- ')"
+            >.--</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>X</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-..- ')"
+            >-..-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Y</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-.-- ')"
+            >-.--</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Z</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('--.. ')"
+            >--..</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>0</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('----- ')"
+            >-----</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.---- ')"
+            >.----</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('..--- ')"
+            >..---</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('...-- ')"
+            >...--</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>4</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('....- ')"
+            >....-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>5</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('..... ')"
+            >.....</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>6</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-.... ')"
+            >-....</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>7</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('--... ')"
+            >--...</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>8</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('---.. ')"
+            >---..</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>9</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('----. ')"
+            >----.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.-.-.- ')"
+            >.-.-.-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>,</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('--..-- ')"
+            >--..--</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>?</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('..--.. ')"
+            >..--..</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>'</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.----. ')"
+            >.----.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>!</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-.-.-- ')"
+            >-.-.--</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>/</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-..-. ')"
+            >-..-.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>(</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-.--. ')"
+            >-.--.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>)</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-.--.- ')"
+            >-.--.-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>&</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.-... ')"
+            >.-...</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>:</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('---... ')"
+            >---...</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>;</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-.-.-. ')"
+            >-.-.-.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>=</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-...- ')"
+            >-...-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>+</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.-.-. ')"
+            >.-.-.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>-</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('-....- ')"
+            >-....-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>_</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('..--.- ')"
+            >..--.-</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>"</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.-..-. ')"
+            >.-..-.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>@</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.--.-. ')"
+            >.--.-.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Á</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.-.-- ')"
+            >.-.--</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>É</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('..-.. ')"
+            >..-..</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Í</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('.. ')"
+            >..</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Ó</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('---. ')"
+            >---.</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Ú</td>
+
+          <td>
+            <button
+              ion-button="ion-button" class="morse-button"
+              (click)="addMorseCode('..-- ')"
+            >..--</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ion-content>
+</ion-content>

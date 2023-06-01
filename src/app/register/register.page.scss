@@ -1,0 +1,46 @@
+ion-header {
+    ion-toolbar {
+      --ion-background-color: #003366;
+      --ion-color-light: #fff;
+    }
+  
+    ion-title {
+      color: #fff;
+    }
+  }
+  
+  ion-content {
+    ion-list {
+      ion-item {
+        --ion-color-primary: #003366;
+      }
+  
+      ion-input {
+        --ion-color-primary: #003366;
+        --ion-color-primary-contrast: #fff;
+      }
+    }
+  
+    ion-button.register-button {
+      --background: #003366; /* Color de fondo del botón de registro */
+      --color: #fff; /* Color del texto del botón de registro */
+      --border-radius: 8px; /* Radio de borde del botón */
+      --padding-start: 20px; /* Espaciado interno izquierdo del botón */
+      --padding-end: 20px; /* Espaciado interno derecho del botón */
+      --font-size: 16px; /* Tamaño de fuente del botón */
+      --min-width: unset; /* Elimina el ancho mínimo del botón */
+      width: 100%;
+    }
+  
+    .login-link {
+      color: #003366;
+      margin-top: 10px;
+      text-align: center;
+    }
+  
+    a {
+      color: #003366;
+      text-decoration: none;
+    }
+  }
+  

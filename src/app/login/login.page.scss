@@ -1,0 +1,59 @@
+ion-header ion-toolbar {
+    --ion-background-color: #003366;
+    --ion-color-light: #fff;
+  }
+  
+  ion-header ion-title {
+    color: #fff;
+  }
+  
+  ion-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  
+    .login-icon {
+      text-align: center;
+  
+      img {
+        width: 150px;
+        height: auto;
+      }
+    }
+  
+    ion-list {
+      ion-item {
+        --ion-color-primary: #003366;
+      }
+  
+      ion-input {
+        --ion-color-primary: #003366;
+        --ion-color-primary-contrast: #fff;
+      }
+    }
+  
+    .custom-button {
+      --ion-color-primary: #003366;
+      font-size: 16px;
+      width: 100%;
+      transition: background-color 0.3s ease-in-out;
+  
+      &:hover {
+        --ion-color-primary: #002b52;
+      }
+    }
+  
+    .register-link {
+      color: #003366;
+      margin-top: 10px;
+      text-align: center;
+    }
+  
+    a {
+      color: #003366;
+      text-decoration: none;
+    }
+  }
+  
