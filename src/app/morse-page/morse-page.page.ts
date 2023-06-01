@@ -76,7 +76,7 @@ export class MorsePagePage implements OnInit {
                            ,'PROGRAMACION','HOLA','CIFRADO'];
   generatedCode: string = '';
   showTable: boolean = false; // Variable para controlar la visualización de la tabla
-
+  morseCodeError: boolean = false;
 
   constructor(
     private router: Router,
@@ -166,5 +166,9 @@ export class MorsePagePage implements OnInit {
     await alert.present();
   }
 
+  validateMorseCode() {
+    const morseCodePattern = /^[-.\/\s]*$/; // Expresión regular para validar código Morse
+    this.morseCodeError = !morseCodePattern.test(this.morseMessage);
+  }
 }
 

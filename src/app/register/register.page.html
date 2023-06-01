@@ -18,11 +18,15 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">Cédula</ion-label>
-      <ion-input type="text" [(ngModel)]="cedula"></ion-input>
+      <ion-input type="text" [(ngModel)]="cedula" pattern="[0-9]{10}" required></ion-input>
     </ion-item>
+    <ion-text color="danger" *ngIf="cedula && cedula.length !== 10">
+      La cédula debe tener 10 números.
+    </ion-text>
+    
     <ion-item>
       <ion-label position="floating">Correo electrónico</ion-label>
-      <ion-input type="email" [(ngModel)]="email"></ion-input>
+      <ion-input type="email" [(ngModel)]="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>

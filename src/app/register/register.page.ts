@@ -28,6 +28,14 @@ export class RegisterPage implements OnInit {
   }
 
   async register() {
+    if (this.password.length < 6) {
+      this.showAlert('Error', 'La contraseña debe tener al menos 6 caracteres.');
+      return;
+    }
+    if (this.cedula.length !== 10) {
+      this.showAlert('Error', 'La cédula debe tener 10 números.');
+      return;
+    }
     try {
       const credentials = await this.afAuth.createUserWithEmailAndPassword(this.email, this.password);
       console.log('Usuario registrado correctamente:', credentials.user);

@@ -7,9 +7,10 @@
 <ion-content>
   <ion-item class="custom-input">
     <ion-label position="floating">Código Morse</ion-label>
-    <ion-input [(ngModel)]="morseMessage"></ion-input>
+    <ion-input [(ngModel)]="morseMessage" (ionChange)="validateMorseCode()"></ion-input>
   </ion-item>
-  
+  <ion-note *ngIf="morseCodeError" color="danger">Ingresa un código Morse válido.</ion-note>
+   
 
   <ion-button
     expand="full"
